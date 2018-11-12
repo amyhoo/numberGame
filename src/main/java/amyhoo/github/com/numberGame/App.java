@@ -4,16 +4,19 @@ import java.util.List;
 import java.util.ArrayList;
 
 /**
- * Hello world!
- *
+ * number game 
+ * @author xym
+ * @since 2018-11-12
  */
 public class App {
+	
+	// constant for rule1 
 	public static final int RULE1_DIVIDER1 = 3;
 	public static final int RULE1_DIVIDER2 = 5;
 	public static final String RULE1_RESULT1 = "Fizz";
 	public static final String RULE1_RESULT2 = "Buzz";
 	public static final String RULE1_RESULT3 = "FizzBuzz";
-
+	// constant for rule2
 	public static final int RULE2_DIVIDER1 = 3;
 	public static final int RULE2_DIVIDER2 = 5;
 	public static final String RULE2_RESULT1 = "Fizz";
@@ -45,6 +48,11 @@ public class App {
 		}
 	}
 
+	/**
+     * filter for rule1
+	 * @param int number
+	 * @return String
+	 */
 	private String filter1(int number) {
 		if (number % RULE1_DIVIDER1 == 0 && number % RULE1_DIVIDER2 == 0) {
 			return RULE1_RESULT3;
@@ -59,6 +67,11 @@ public class App {
 		}
 	}
 
+	/**
+     * filter for rule2
+	 * @param int number
+	 * @return String
+	 */	
 	private String filter2( int number) {
 		boolean cond1 = number % RULE2_DIVIDER1 == 0 || String.valueOf(number).contains(String.valueOf(RULE2_DIVIDER1)) ;
 		boolean cond2 = number % RULE2_DIVIDER2 == 0 || String.valueOf(number).contains(String.valueOf(RULE2_DIVIDER2)) ;
@@ -77,6 +90,11 @@ public class App {
     	}
     }
 
+	/**
+     * generate the whole list of the number for rule1
+	 * @param int number
+	 * @return List<String>
+	 */		
 	public List<String> stage1(int number)
     {
 		List<String> data = new ArrayList<String>();
@@ -86,6 +104,11 @@ public class App {
     	return data;
     }
 
+	/**
+     * generate the whole list of the number for rule2
+	 * @param int number
+	 * @return List<String>
+	 */		
 	public List<String> stage2(int number) {
 		List<String> data = new ArrayList<String>();
     	for (int i=1;i<=number;i++) {
